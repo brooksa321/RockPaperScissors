@@ -93,11 +93,10 @@ while True:
 	rps()
 	
 	n = (raw_input(str("Would you like to play again? ")))
-	x = check_YN(n)
+	x = str(check_YN(n))
 	
-	print x
 
-	if x == "N" or "NO":
+	if x in ("N", "NO"):
 		print "Player won {} games!".format(player_score)
 		print "Computer won {} games!".format(comp_score)
 		print "Player and Computer tied {} games!".format(draw_score)
