@@ -45,6 +45,13 @@ def rps():
 #	score(player_wins, comp_wins, draws)
 
 def assign(choice):
+	while True:
+		if choice in (1,2,3):
+			break
+		else:
+			choice = int(raw_input("C'mon Bro, that'n not an option! Please choose 1 for Rock, 2 for Paper or 3 for Scissors: "))
+
+
 	if choice == 1:
 		choice = "Rock"
 	elif choice == 2:
@@ -73,13 +80,13 @@ def score(winner):
 	return draw_score
 
 
-def check_YN(n):
+def again(n):
     """Function to Verify user input is valid""" 
     
     ### Ensures the input is valid and capitalizes for uniformity
     while True:
 		n = n.upper()
-		if n == "Y" or "YES" or "N" or "NO":
+		if n in ("Y", "YES", "N", "NO"):
 			break
 		else:
 			n = (raw_input(str("Please enter [y/n]")))
@@ -93,7 +100,7 @@ while True:
 	rps()
 	
 	n = (raw_input(str("Would you like to play again? ")))
-	x = str(check_YN(n))
+	x = str(again(n))
 	
 
 	if x in ("N", "NO"):
